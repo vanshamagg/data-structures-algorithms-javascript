@@ -12,8 +12,8 @@ int main()
 {
 
     int length = 6;
-    int k = 3;
-    int arr[length] = {1, 2, 3, 4, 5, 6};
+    int k = 7;
+    int arr[length] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     // simpleRotate(arr, length, 3);
 
@@ -33,11 +33,11 @@ void print(int arr[], int length)
 
 int gcd(int a, int b)
 {
-
+    // cout << "A :: " << a << "  B :: " << b << "  B%A " << b % a << endl;
     if (a == 0)
         return b;
-    else
-        return (b % a, a);
+
+    return gcd(b % a, a);
 }
 int simpleRotate(int arr[], int length, int k)
 {
@@ -102,10 +102,15 @@ int juggling(int arr[], int length, int k)
         while (1)
         {
             int s = j + k;
+
             if (s >= length)
             {
-                break;
+                s = s % length;
             }
+
+            if (s == i)
+                break;
+
             arr[j] = arr[s];
 
             j = s;
