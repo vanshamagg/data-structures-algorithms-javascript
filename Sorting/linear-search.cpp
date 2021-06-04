@@ -20,7 +20,7 @@ int main()
         }
     }
 
-    cout << index << endl;
+    cout << index << endl0;
 
     return 0;
 }
